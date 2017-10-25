@@ -130,7 +130,9 @@ public class ObjectID{
 		if(isPrivate()){return;}
 		if(getPacketList().isEmpty()){return;}
 		if(getSQLAction().equals(SQLAction.REMOVE)){return;}
-		if(!isInWorld(player)){return;}
+		if(!isInWorld(player)){
+			if(players.contains(player)) players.remove(player);
+			return;}
 		if(isInRange(player)){
 			if(players.contains(player)){return;}
 			for(fEntity stand : getPacketList()){stand.send(player);}
@@ -298,7 +300,7 @@ public class ObjectID{
 	}
 	
 	public String getPlayerName(){
-		String name = "§cUNKNOW";
+		String name = "Â§cUNKNOW";
 		if(uuid!=null){
 			OfflinePlayer p = Bukkit.getOfflinePlayer(uuid);
 			name = p.getName();

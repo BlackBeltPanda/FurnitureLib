@@ -137,7 +137,7 @@ public class FurnitureLib extends JavaPlugin{
 	public Updater getUpdater(){return updater;}
 	@Override
 	public void onEnable(){
-		if(!isEnable("ProtocolLib", true)){send("�cProtocolLib not found");getPluginManager().disablePlugin(this);}else{
+		if(!isEnable("ProtocolLib", true)){send("§cProtocolLib not found");getPluginManager().disablePlugin(this);}else{
 			if(getServer().getBukkitVersion().startsWith("1.9") || getServer().getBukkitVersion().startsWith("1.10") || getServer().getBukkitVersion().startsWith("1.11") || getServer().getBukkitVersion().startsWith("1.12")){
 				instance = this;
 				getConfig().addDefaults(YamlConfiguration.loadConfiguration(loadStream("config.yml")));
@@ -187,16 +187,16 @@ public class FurnitureLib extends JavaPlugin{
 				c.setTabCompleter(new TabCompleterHandler(this));
 				this.Pmanager = new ProtectionManager(instance);
 				send("==========================================");
-				send("FurnitureLibary Version: �e" + this.getDescription().getVersion());
-				send("Furniture Autor: �6" + this.getDescription().getAuthors().get(0));
-				send("Furniture Website: �e" + this.getDescription().getWebsite());
+				send("FurnitureLibary Version: §e" + this.getDescription().getVersion());
+				send("Furniture Autor: §6" + this.getDescription().getAuthors().get(0));
+				send("Furniture Website: §e" + this.getDescription().getWebsite());
 				String s = getPluginManager().getPlugin("ProtocolLib").getDescription().getVersion();
 				boolean protocollib = isRightProtocollib(s);
 				this.limitManager = new LimitationManager(this, LimitationType.valueOf(getConfig().getString("config.LimitType", "PLAYER").toUpperCase()));
 				if(protocollib){
 					send("Furniture start load");
 					Boolean b = isEnable("ProtectionLib", false);
-					send("Furniture find ProtectionLib: �e" + b.toString());
+					send("Furniture find ProtectionLib: §e" + b.toString());
 					createDefaultWatchers();
 					
 					PublicMode mode = PublicMode.valueOf(getConfig().getString("config.PlaceMode.Mode"));
@@ -220,7 +220,7 @@ public class FurnitureLib extends JavaPlugin{
 							if(b){
 								if(getConfig().getBoolean("config.timer.Enable")){int time = getConfig().getInt("config.timer.time");sqlManager.saveIntervall(time);}
 								pManager.loadProjectFiles();
-								send("�2Furniture load finish :)");
+								send("§2Furniture load finish :)");
 							}
 						}
 					});
@@ -228,13 +228,13 @@ public class FurnitureLib extends JavaPlugin{
 					send("==========================================");
 				}else{
 					send("Furniture Lib deosn't find the correct ProtocolLib");
-					send("Please Install Protocollib �c4.x");
-					send("You can it download at: �6�lhttps://www.spigotmc.org/resources/protocollib.1997/");
+					send("Please Install Protocollib §c4.x");
+					send("You can it download at: §6§lhttps://www.spigotmc.org/resources/protocollib.1997/");
 					send("==========================================");
 					getPluginManager().disablePlugin(this);
 				}
 			}else{
-				send("�cYour Server version is not Supportet please use �c1.9.x");
+				send("§cYour Server version is not Supportet please use §c1.9.x");
 				getPluginManager().disablePlugin(this);
 			}
 		}

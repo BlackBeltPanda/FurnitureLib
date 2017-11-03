@@ -82,7 +82,7 @@ public class ChunkOnLoad implements Listener{
 //			Location l = new Relative(player.getLocation(), -2, 0, 0, FurnitureLib.getInstance().getLocationUtil().yawToFace(player.getLocation().getYaw())).getSecondLocation();
 //			l.setYaw(player.getLocation().getYaw());
 //			fArmorStand stand = new fArmorStand(l, id);
-//			stand.setName("�cHerobrine");
+//			stand.setName("§cHerobrine");
 //			
 //			ItemStack skull = new ItemStack(Material.SKULL_ITEM);
 //			skull.setDurability((short) 3);

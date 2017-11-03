@@ -85,15 +85,15 @@ public class FurnitureManager {
 			@Override
 			public void run() {
 				long currentTime = System.currentTimeMillis();
-				sender.sendMessage("ยงnยง7--------------------------------------");
-				sender.sendMessage("ยง7Furniture async saving started");
+				sender.sendMessage("งnง7--------------------------------------");
+				sender.sendMessage("ง7Furniture async saving started");
 				FurnitureLib.getInstance().getSQLManager().save();
 				long newTime = System.currentTimeMillis();
 				long time = newTime - currentTime;
 				SimpleDateFormat timeDate = new SimpleDateFormat("mm:ss.SSS");
 		    	String timeStr = timeDate.format(time);
-				sender.sendMessage("ยง7Furniture saving finish : ยง9" + timeStr);
-				sender.sendMessage("ยงnยง7--------------------------------------");
+				sender.sendMessage("ง7Furniture saving finish : ง9" + timeStr);
+				sender.sendMessage("งnง7--------------------------------------");
 			}
 		});
 	}

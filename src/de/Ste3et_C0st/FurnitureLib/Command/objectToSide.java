@@ -29,7 +29,7 @@ public class objectToSide {
 			return;
 		}
 		
-		p.sendMessage("ยง7ยงm+--------------------------------------------+ยง8[ยงe" + b + "ยง8/ยงa" + a + "ยง8]");
+		p.sendMessage("ง7งm+--------------------------------------------+ง8[งe" + b + "ง8/งa" + a + "ง8]");
 		
 		int j = 0;
 		for(Object obj : objList){
@@ -42,26 +42,26 @@ public class objectToSide {
 		
 		String prevCommand = null;
 		String nextCommand = null;
-		String prevColor = "ยงc";
-		String nextColor = "ยงa";
+		String prevColor = "งc";
+		String nextColor = "งa";
 		
 		if(page>=2){
 			prevCommand = command + " " + (page - 1);
 		}else{
-			prevColor = "ยง7";
+			prevColor = "ง7";
 		}
 		
 		if(page + 1 > maxPage){
-			nextColor = "ยง7";
+			nextColor = "ง7";
 		}else{
 			nextCommand = command + " " + (page + 1);
 		}
 		
-		p.spigot().sendMessage(new ComponentBuilder("ยง7ยงm+--------------------------------------------+ยง8[ยงe")
-		.append(prevColor + "ยซ").event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, prevCommand))
-		.append("ยง8/ยงa")
-		.append(nextColor + "ยป").event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, nextCommand))
-		.append("ยง8]").create());
+		p.spigot().sendMessage(new ComponentBuilder("ง7งm+--------------------------------------------+ง8[งe")
+		.append(prevColor + "ซ").event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, prevCommand))
+		.append("ง8/งa")
+		.append(nextColor + "ป").event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, nextCommand))
+		.append("ง8]").create());
 	}
 	
 	private int getPage(int i){

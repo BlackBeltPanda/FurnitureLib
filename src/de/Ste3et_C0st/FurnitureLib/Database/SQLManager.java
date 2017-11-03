@@ -179,4 +179,3 @@ public class SQLManager {
 		}
 	}
 }
->>>>>>> 2e3b3ac0e73348a941cd9a00a0fe0af49c961e45

@@ -28,18 +28,18 @@ public class deleteCommand {
 							List<ObjectID> id = getObject(project);
 							int i = 0;
 							if(id!=null) i = id.size();
-							sender.sendMessage("Â§cThen you want to delete this Model");
-							sender.sendMessage("Â§cPlease confirm the delete from Â§a" + i + "Â§c Models");
-							sender.sendMessage("Â§cPlease type Â§aÂ§n/furniture delete System-ID confirmÂ§r Â§cto remove it");
-							sender.sendMessage("Â§cYou have 20 secounds time to do it");
+							sender.sendMessage("§cThen you want to delete this Model");
+							sender.sendMessage("§cPlease confirm the delete from §a" + i + "§c Models");
+							sender.sendMessage("§cPlease type §a§n/furniture delete System-ID confirm§r §cto remove it");
+							sender.sendMessage("§cYou have 20 secounds time to do it");
 							FurnitureLib.getInstance().deleteMap.put(project, System.currentTimeMillis());
 						}else{
-							sender.sendMessage("Â§cThis is no FurnitureMaker model");
-							sender.sendMessage("Â§cYou can use Â§aÂ§n/furniture recipe System-ID removeÂ§r Â§cto disable it");
+							sender.sendMessage("§cThis is no FurnitureMaker model");
+							sender.sendMessage("§cYou can use §a§n/furniture recipe System-ID remove§r §cto disable it");
 							return;
 						}
 					}else{
-						sender.sendMessage("Â§cThe project Â§n" + systemID + " Â§c does not exist");
+						sender.sendMessage("§cThe project §n" + systemID + " §c does not exist");
 					}
 				}
 			}else if(args.length==3){
@@ -71,24 +71,24 @@ public class deleteCommand {
 										if(file1 != null && file1.exists()) file1.delete();
 										if(file2 != null && file2.exists()) file2.delete();
 										FurnitureLib.getInstance().getFurnitureManager().getProjects().remove(project);
-										sender.sendMessage("Â§2The Furniture Model Â§a" + systemID + " Â§2have been removed");
+										sender.sendMessage("§2The Furniture Model §a" + systemID + " §2have been removed");
 									}else{
-										sender.sendMessage("Â§cYou where to lame please put Â§aÂ§n/furniture delete System-ID");
+										sender.sendMessage("§cYou where to lame please put §a§n/furniture delete System-ID");
 										FurnitureLib.getInstance().deleteMap.remove(project);
 									}
 								}else{
-									sender.sendMessage("Â§cYou must be type Â§aÂ§n/furniture delete System-ID");
+									sender.sendMessage("§cYou must be type §a§n/furniture delete System-ID");
 								}
 							}else{
-								sender.sendMessage("Â§cThis is no FurnitureMaker model");
-								sender.sendMessage("Â§cYou can use Â§aÂ§n/furniture recipe System-ID removeÂ§r Â§cto disable it");
+								sender.sendMessage("§cThis is no FurnitureMaker model");
+								sender.sendMessage("§cYou can use §a§n/furniture recipe System-ID remove§r §cto disable it");
 								return;
 							}
 						}else{
-							sender.sendMessage("Â§cThe project Â§n" + systemID + " Â§c does not exist");
+							sender.sendMessage("§cThe project §n" + systemID + " §c does not exist");
 						}
 					}else{
-						sender.sendMessage("Â§cYou must be type Â§aÂ§n/furniture delete System-ID confirm");
+						sender.sendMessage("§cYou must be type §a§n/furniture delete System-ID confirm");
 					}
 				}
 			}else{

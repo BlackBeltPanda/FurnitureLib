@@ -32,8 +32,8 @@ public class downloadCommand {
 						if(!command.noPermissions(sender, "furniture.download")) return;
 						String name = args[1];
 						final URL url = new URL("http://api.dicecraft.de/furniture/download.php");
-						sender.sendMessage("Â§7Â§m+-------------------Â§7[Â§2DownloadÂ§7]Â§m--------------------+");
-						sender.sendMessage("Â§6Download startet from: " + name);
+						sender.sendMessage("§7§m+-------------------§7[§2Download§7]§m--------------------+");
+						sender.sendMessage("§6Download startet from: " + name);
 						downLoadData(name, url, sender, null);
 					}catch(Exception e){
 						e.printStackTrace();
@@ -45,8 +45,8 @@ public class downloadCommand {
 						if(!command.noPermissions(sender, "furniture.download")) return;
 						String name = args[1];
 						final URL url = new URL("http://api.dicecraft.de/furniture/download.php");
-						sender.sendMessage("Â§7Â§m+-------------------Â§7[Â§2DownloadÂ§7]Â§m--------------------+");
-						sender.sendMessage("Â§6Download startet from: " + name);
+						sender.sendMessage("§7§m+-------------------§7[§2Download§7]§m--------------------+");
+						sender.sendMessage("§6Download startet from: " + name);
 						downLoadData(name, url, sender, args[2]);
 					}catch(Exception e){
 						e.printStackTrace();
@@ -86,7 +86,7 @@ public class downloadCommand {
 					int i = 0;
 					while ((line = reader.readLine()) != null) {
 						if(line.equalsIgnoreCase("#NOTEXIST") || line.equalsIgnoreCase("Invalid Page")){
-							sender.sendMessage("Â§cProject Not Found");
+							sender.sendMessage("§cProject Not Found");
 						}else{
 							switch (i) {
 							case 0:config = line;
@@ -102,9 +102,9 @@ public class downloadCommand {
 					if(projectName.equals("")){b=false;}
 					
 					if(b){
-						sender.sendMessage("Â§6You have downloaded: " + projectName);
-						sender.sendMessage("Â§6With the ID: " + name);
-						sender.sendMessage("Â§6Createt from: " + playerName);
+						sender.sendMessage("§6You have downloaded: " + projectName);
+						sender.sendMessage("§6With the ID: " + name);
+						sender.sendMessage("§6Createt from: " + playerName);
 						if(s!=null){
 							projectName=s;
 							sender.sendMessage(projectName);
@@ -113,10 +113,10 @@ public class downloadCommand {
 					}
 					
 					connection.getInputStream().close();
-					sender.sendMessage("Â§7Â§m+------------------------------------------------+");
+					sender.sendMessage("§7§m+------------------------------------------------+");
 				}catch(Exception e){
-					sender.sendMessage("Â§cThe FurnitureMaker Downloader have an Exception");
-					sender.sendMessage("Â§cPlease contact the Developer");
+					sender.sendMessage("§cThe FurnitureMaker Downloader have an Exception");
+					sender.sendMessage("§cPlease contact the Developer");
 					e.printStackTrace();
 				}
 			}

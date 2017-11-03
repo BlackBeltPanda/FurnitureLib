@@ -47,20 +47,20 @@ public class command implements CommandExecutor, Listener{
 		if(playerList.contains(e.getPlayer())){
 			e.setCancelled(true);
 			Player p = e.getPlayer();
-			p.sendMessage("Â§6Furniture Info aboutÂ§e " + e.getID().getSerial());
-			p.sendMessage("Â§6Plugin:Â§e " + e.getID().getPlugin());
-			p.sendMessage("Â§6Type:Â§e " + e.getID().getProject());
-			p.sendMessage("Â§6PublicMode:Â§e " + e.getID().getPublicMode().name().toLowerCase());
-			p.sendMessage("Â§6Owner: Â§2" + e.getID().getPlayerName());
-			p.sendMessage("Â§6PublicEventAccess: Â§e" + e.getID().getEventType().name().toLowerCase());
-			p.sendMessage("Â§6ArmorStands: Â§e" + e.getID().getPacketList().size());
-			p.sendMessage("Â§6FromDatabase: Â§c" + e.getID().isFromDatabase());
-			p.sendMessage("Â§6Object Finish: Â§c" + e.getID().isFinish());
-			p.sendMessage("Â§6Members: Â§e" + e.getID().getMemberList().size());
-			p.sendMessage("Â§6SQL State: Â§e" + e.getID().getSQLAction().name().toLowerCase());
-			p.sendMessage("Â§6Size: Â§e" + e.getID().getProjectOBJ().getLength()+":"+ e.getID().getProjectOBJ().getHeight()+":"+e.getID().getProjectOBJ().getWitdh());
-			p.sendMessage("Â§6Blocks: Â§a" + e.getID().getBlockList().size());
-			p.sendMessage("Â§6Project-Model: Â§e" + e.getID().getProjectOBJ().isEditorProject());
+			p.sendMessage("§6Furniture Info about§e " + e.getID().getSerial());
+			p.sendMessage("§6Plugin:§e " + e.getID().getPlugin());
+			p.sendMessage("§6Type:§e " + e.getID().getProject());
+			p.sendMessage("§6PublicMode:§e " + e.getID().getPublicMode().name().toLowerCase());
+			p.sendMessage("§6Owner: §2" + e.getID().getPlayerName());
+			p.sendMessage("§6PublicEventAccess: §e" + e.getID().getEventType().name().toLowerCase());
+			p.sendMessage("§6ArmorStands: §e" + e.getID().getPacketList().size());
+			p.sendMessage("§6FromDatabase: §c" + e.getID().isFromDatabase());
+			p.sendMessage("§6Object Finish: §c" + e.getID().isFinish());
+			p.sendMessage("§6Members: §e" + e.getID().getMemberList().size());
+			p.sendMessage("§6SQL State: §e" + e.getID().getSQLAction().name().toLowerCase());
+			p.sendMessage("§6Size: §e" + e.getID().getProjectOBJ().getLength()+":"+ e.getID().getProjectOBJ().getHeight()+":"+e.getID().getProjectOBJ().getWitdh());
+			p.sendMessage("§6Blocks: §a" + e.getID().getBlockList().size());
+			p.sendMessage("§6Project-Model: §e" + e.getID().getProjectOBJ().isEditorProject());
 			if(e.getID().getUUID()!=null){
 				OfflinePlayer player = Bukkit.getOfflinePlayer(e.getID().getUUID());
 				if(player.hasPlayedBefore()&&!player.isOnline()){
@@ -69,7 +69,7 @@ public class command implements CommandExecutor, Listener{
 					long mili3 = mili1-mili2;
 					SimpleDateFormat time = new SimpleDateFormat("D:HH:mm:ss.SSS");
 			    	String timeStr = time.format(mili3);
-			    	p.sendMessage("Â§6Player Offline: " + timeStr);
+			    	p.sendMessage("§6Player Offline: " + timeStr);
 				}
 			}
 			
@@ -171,70 +171,70 @@ public class command implements CommandExecutor, Listener{
 		
 		String str = "";
 		if(Bukkit.getPluginManager().isPluginEnabled("FurnitureMaker")){
-			str = "\nÂ§2Models";
+			str = "\n§2Models";
 		}
 		
 		
 		if(!lib.getPermission().hasPerm(player,"furniture.help")) return;
 
-		ComponentBuilder  builder = new ComponentBuilder("Â§7Â§m+--------------------Â§7[")
-		.append("Â§2Furniture").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6Â§lVersion: Â§7" + version + "\n"
-				+ "Â§6Â§lAuthor: Â§2" + Author +  update).create()))
-		.append("Â§7]Â§m---------------------+\n")
-		.append("Â§6/furniture list Â§e(Option) Â§c(side)\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6list all available furniture\n\nÂ§cOption:\nÂ§6Plugin\nÂ§6Type\nÂ§6World"+str).create()))
+		ComponentBuilder  builder = new ComponentBuilder("§7§m+--------------------§7[")
+		.append("§2Furniture").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6§lVersion: §7" + version + "\n"
+				+ "§6§lAuthor: §2" + Author +  update).create()))
+		.append("§7]§m---------------------+\n")
+		.append("§6/furniture list §e(Option) §c(side)\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6list all available furniture\n\n§cOption:\n§6Plugin\n§6Type\n§6World"+str).create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture list (Option)"))
-		.append("Â§6/furniture give Â§e<furniture> Â§c(player) Â§d(Amount)\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6if the Â§cPlayer not set:\n"
-				+ "Â§cyou become a furniture\n" + 
-				"Â§6if the Player set:\n" + 
-				"Â§cgive the player one furniture").create()))
+		.append("§6/furniture give §e<furniture> §c(player) §d(Amount)\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6if the §cPlayer not set:\n"
+				+ "§cyou become a furniture\n" + 
+				"§6if the Player set:\n" + 
+				"§cgive the player one furniture").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture give <FURNITURE> (player)"))
-		.append("Â§6/furniture debug \n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6You can become some information about\nÂ§6abaout the furniture you are rightclicked").create()))
+		.append("§6/furniture debug \n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6You can become some information about\n§6abaout the furniture you are rightclicked").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture debug"))
-		.append("Â§6/furniture manage \n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6You can config the furniture\nÂ§6that you are rightclicked").create()))
+		.append("§6/furniture manage \n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6You can config the furniture\n§6that you are rightclicked").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture manage"))
-		.append("Â§6/furniture purge Â§e<Time>\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6Marked all furnitures to remove from the database").create()))
+		.append("§6/furniture purge §e<Time>\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6Marked all furnitures to remove from the database").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture purge <time>"))
-		.append("Â§6/furniture recipe Â§e<type> Â§a(edit/remove)\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6View recipe from a furniture").create()))
+		.append("§6/furniture recipe §e<type> §a(edit/remove)\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6View recipe from a furniture").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture recipe <type>"))
-		.append("Â§6/furniture remove Â§e<type/player/world/plugin/ID/Distance>\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6You can remove furnitures with the type:"
-					+ "\nÂ§4Exemples: "
-					+ "\nÂ§ctype = tent1"
-					+ "\nÂ§cplayer = " + player.getName()
-					+ "\nÂ§cworld = " + player.getWorld().getName()
-					+ "\nÂ§cID = TOm4nvkoLW" 
-					+ "\nÂ§cDistance = 5").create()))
+		.append("§6/furniture remove §e<type/player/world/plugin/ID/Distance>\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6You can remove furnitures with the type:"
+					+ "\n§4Exemples: "
+					+ "\n§ctype = tent1"
+					+ "\n§cplayer = " + player.getName()
+					+ "\n§cworld = " + player.getWorld().getName()
+					+ "\n§cID = TOm4nvkoLW" 
+					+ "\n§cDistance = 5").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture remove <type>"))
-		.append("Â§6/furniture remove Â§elookat\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6Remove a furniture at you looked").create()))
+		.append("§6/furniture remove §elookat\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6Remove a furniture at you looked").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture remove lookat"))
-		.append("Â§6/furniture remove Â§eall\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6Remove all furniture and reset database").create()))
+		.append("§6/furniture remove §eall\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6Remove all furniture and reset database").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture remove all"))
-		.append("Â§6/furniture toggle\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6Hide/Show furniture to you").create()))
+		.append("§6/furniture toggle\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6Hide/Show furniture to you").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture toggle"))
-		.append("Â§6/furniture download Â§e<id> Â§a(newName)\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6You can donload an furniture").create()))
+		.append("§6/furniture download §e<id> §a(newName)\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6You can donload an furniture").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture donwnload <id>"))
-		.append("Â§6/furniture delete Â§e<name>\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6You can delete a Furniture Model").create()))
+		.append("§6/furniture delete §e<name>\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6You can delete a Furniture Model").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture delete <name>"))
-		.append("Â§6/furniture save\n")
-			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§6The is the manuell saving command").create()))
+		.append("§6/furniture save\n")
+			.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§6The is the manuell saving command").create()))
 			.event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/furniture save"));
 		for(SubCommand commands : subCommands){
 			builder.append(commands.getCommand() + "\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(commands.getHoverText()).create())).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, commands.getSuggest_Command()));
 		}
-		builder.append("\n").append("Â§6You need help with the commands look at the ").append("Â§cCommand Page").event(new ClickEvent(ClickEvent.Action.OPEN_URL, "http://dicecraft.de/furniture/cmdperm.php"));
-		builder.append("\n").append("Â§eÂ§lTIP: Â§rÂ§7Try to Â§eÂ§nclickÂ§7 or Â§eÂ§nhoverÂ§7 the commands").
-		append("Â§7Â§m+--------------------------------------------------+");
+		builder.append("\n").append("§6You need help with the commands look at the ").append("§cCommand Page").event(new ClickEvent(ClickEvent.Action.OPEN_URL, "http://dicecraft.de/furniture/cmdperm.php"));
+		builder.append("\n").append("§e§lTIP: §r§7Try to §e§nclick§7 or §e§nhover§7 the commands").
+		append("§7§m+--------------------------------------------------+");
 		player.spigot().sendMessage(builder.create());
 	}
 }

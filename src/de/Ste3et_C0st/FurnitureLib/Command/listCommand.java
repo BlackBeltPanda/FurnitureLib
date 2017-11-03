@@ -37,8 +37,8 @@ public class listCommand {
 				String name = pro.getName();
 				if(detail){
 					List<ObjectID> objectList = getByType(pro);
-					s = "Â§eObjects: Â§c" + objectList.size();
-					s += "\nÂ§eSystemID: Â§c" + pro.getName();
+					s = "§eObjects: §c" + objectList.size();
+					s += "\n§eSystemID: §c" + pro.getName();
 				}
 				
 				if(pro.getCraftingFile().getRecipe().getResult() != null){
@@ -50,11 +50,11 @@ public class listCommand {
 				}
 				
 				if(give){
-					objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture give " + pro.getName())));
+					objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture give " + pro.getName())));
 				}else if(recipe){
-					objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture recipe " + pro.getName())));
+					objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture recipe " + pro.getName())));
 				}else {
-					objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())));
+					objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())));
 				}
 			}
 			new objectToSide(objList, p, 1, "/furniture list");
@@ -64,14 +64,14 @@ public class listCommand {
 				if(!command.noPermissions(sender, "furniture.list.type")) return;
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					List<ObjectID> objectList = getByType(pro);
-					objList.add(new ComponentBuilder("Â§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));
+					objList.add(new ComponentBuilder("§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));
 				}
 				subcommand = " type";
 			}else if(args[1].equalsIgnoreCase("World")){
 				if(!command.noPermissions(sender, "furniture.list.world")) return;
 				for(World w : Bukkit.getWorlds()){
 					List<ObjectID> objectList = getByWorld(w);
-					objList.add(new ComponentBuilder("Â§6- " + w.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));
+					objList.add(new ComponentBuilder("§6- " + w.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));
 				}
 				subcommand = " world";
 			}else if(args[1].equalsIgnoreCase("Plugin")){
@@ -80,8 +80,8 @@ public class listCommand {
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					String plugin = pro.getPlugin().getName();
 					if(!plugins.contains(plugin)){
-						objList.add(new ComponentBuilder("Â§c" + plugin));
-						for(Project project : getByPlugin(plugin)){objList.add(new ComponentBuilder("Â§7- " + project.getName()));}
+						objList.add(new ComponentBuilder("§c" + plugin));
+						for(Project project : getByPlugin(plugin)){objList.add(new ComponentBuilder("§7- " + project.getName()));}
 						plugins.add(plugin);
 					}
 				}
@@ -91,7 +91,7 @@ public class listCommand {
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					if(pro.isEditorProject()){
 						List<ObjectID> objectList = getByModel(pro);
-						objList.add(new ComponentBuilder("Â§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));
+						objList.add(new ComponentBuilder("§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));
 					}
 				}
 				subcommand = " models";
@@ -107,8 +107,8 @@ public class listCommand {
 					String name = pro.getName();
 					if(detail){
 						List<ObjectID> objectList = getByType(pro);
-						s = "Â§eObjects: Â§c" + objectList.size();
-						s += "\nÂ§eSystemID: Â§c" + pro.getName();
+						s = "§eObjects: §c" + objectList.size();
+						s += "\n§eSystemID: §c" + pro.getName();
 					}
 					
 					if(pro.getCraftingFile().getRecipe().getResult() != null){
@@ -120,11 +120,11 @@ public class listCommand {
 					}
 					
 					if(give){
-						objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture give " + pro.getName())));
+						objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture give " + pro.getName())));
 					}else if(recipe){
-						objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture recipe " + pro.getName())));
+						objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())).event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/furniture recipe " + pro.getName())));
 					}else {
-						objList.add(new ComponentBuilder("Â§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())));
+						objList.add(new ComponentBuilder("§6- " + name).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(s).create())));
 					}
 				}
 				new objectToSide(objList, p, Integer.parseInt(args[1]), "/furniture list");
@@ -140,14 +140,14 @@ public class listCommand {
 				if(!command.noPermissions(sender, "furniture.list.type")) return;
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					List<ObjectID> objectList = getByType(pro);
-					objList.add(new ComponentBuilder("Â§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));
+					objList.add(new ComponentBuilder("§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));
 				}
 				subcommand = " type";
 			}else if(args[1].equalsIgnoreCase("World")){
 				if(!command.noPermissions(sender, "furniture.list.world")) return;
 				for(World w : Bukkit.getWorlds()){
 					List<ObjectID> objectList = getByWorld(w);
-					objList.add(new ComponentBuilder("Â§6- " + w.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));
+					objList.add(new ComponentBuilder("§6- " + w.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));
 				}
 				subcommand = " world";
 			}else if(args[1].equalsIgnoreCase("models")){
@@ -155,7 +155,7 @@ public class listCommand {
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					if(pro.isEditorProject()){
 						List<ObjectID> objectList = getByModel(pro);
-						objList.add(new ComponentBuilder("Â§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Â§eObjecte: Â§c" + objectList.size()).create())));	
+						objList.add(new ComponentBuilder("§6- " +pro.getName()).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§eObjecte: §c" + objectList.size()).create())));	
 					}
 				}
 				subcommand = " models";
@@ -165,8 +165,8 @@ public class listCommand {
 				for(Project pro : FurnitureLib.getInstance().getFurnitureManager().getProjects()){
 					String plugin = pro.getPlugin().getName();
 					if(!plugins.contains(plugin)){
-						objList.add(new ComponentBuilder("Â§c" + plugin));
-						for(Project project : getByPlugin(plugin)){objList.add(new ComponentBuilder("Â§7- " + project.getName()));}
+						objList.add(new ComponentBuilder("§c" + plugin));
+						for(Project project : getByPlugin(plugin)){objList.add(new ComponentBuilder("§7- " + project.getName()));}
 						plugins.add(plugin);
 					}
 				}

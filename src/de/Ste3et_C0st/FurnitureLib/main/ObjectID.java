@@ -300,7 +300,7 @@ public class ObjectID{
 	}
 	
 	public String getPlayerName(){
-		String name = "§cUNKNOW";
+		String name = "ï¿½cUNKNOW";
 		if(uuid!=null){
 			OfflinePlayer p = Bukkit.getOfflinePlayer(uuid);
 			name = p.getName();

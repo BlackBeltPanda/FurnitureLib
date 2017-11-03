@@ -37,8 +37,8 @@ public class Updater {
 	
 	public void sendPlayer(final Player p){
 		if(isUpdateAvaible()){
-			p.sendMessage("§7[§6FurnitureLib§7] §6Update §e" + newVersion + " §6is avaible");
-			p.sendMessage("§7[§6FurnitureLib§7] §6Lookat: §e" + "http://goo.gl/L7w1QQ");
+			p.sendMessage("ï¿½7[ï¿½6FurnitureLibï¿½7] ï¿½6Update ï¿½e" + newVersion + " ï¿½6is avaible");
+			p.sendMessage("ï¿½7[ï¿½6FurnitureLibï¿½7] ï¿½6Lookat: ï¿½e" + "http://goo.gl/L7w1QQ");
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class Updater {
 	public String getUpdate(){
 		String s = "";
 		if(isUpdateAvaible()){
-			s = "\n§c§lUpdate Avaible §2§lv" + newVersion;
+			s = "\nï¿½cï¿½lUpdate Avaible ï¿½2ï¿½lv" + newVersion;
 		}
 		return s;
 	}

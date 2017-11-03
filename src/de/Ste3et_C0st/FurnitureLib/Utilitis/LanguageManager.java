@@ -122,8 +122,8 @@ public class LanguageManager{
 	
 	
 	public String getString(String a){
-		if(hash.isEmpty()) return "§cHash is empty";
-		if(!hash.containsKey(a)) return "§ckey not found";
+		if(hash.isEmpty()) return "ï¿½cHash is empty";
+		if(!hash.containsKey(a)) return "ï¿½ckey not found";
 		String b = hash.get(a);
 		return ChatColor.translateAlternateColorCodes('&', b);
 	}
